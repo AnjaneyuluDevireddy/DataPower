@@ -1,0 +1,517 @@
+<datapower-configuration version="3"><export-details><description>Exported Configuration</description><user>admin</user><domain>Anand</domain><comment/><product-id>software</product-id><product>IDG</product><display-product>IDG</display-product><model>IBM DataPower Gateway</model><display-model>IBM DataPower Gateway</display-model><device-name>12347023ea47</device-name><serial-number>0000001</serial-number><firmware-version>IDG.10.0.3.0</firmware-version><display-firmware-version>IDG.10.0.3.0</display-firmware-version><firmware-build>333705</firmware-build><delivery-type>CD</delivery-type><firmware-timestamp>2021/06/16 21:06:57</firmware-timestamp><current-date>2023-04-26</current-date><current-time>16:24:38 EDT</current-time><reset-date>2023-03-11</reset-date><reset-time>14:56:19 EST</reset-time><login-message/><custom-ui-file/></export-details><interface-data><interface name="eth0" type="Other" vers="ipv4" ip-addr="172.18.0.2"/></interface-data><configuration domain="Anand"><CryptoKey name="sample" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Filename>cert:///sample-privkey.pem</Filename>
+<PasswordAlias>off</PasswordAlias></CryptoKey><CryptoCertificate name="sample" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Filename>cert:///sample-sscert.pem</Filename>
+<PasswordAlias>off</PasswordAlias>
+<IgnoreExpiration>off</IgnoreExpiration></CryptoCertificate><CryptoIdentCred name="sample" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Key class="CryptoKey">sample</Key>
+<Certificate class="CryptoCertificate">sample</Certificate></CryptoIdentCred><CryptoProfile name="sample" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<IdentCredential class="CryptoIdentCred">sample</IdentCredential>
+<Ciphers>HIGH:MEDIUM:!aNULL:!eNULL:!RC4:@STRENGTH</Ciphers>
+<SSLOptions>
+<OpenSSL-default>on</OpenSSL-default>
+<Disable-SSLv2>on</Disable-SSLv2>
+<Disable-SSLv3>on</Disable-SSLv3>
+<Disable-TLSv1>off</Disable-TLSv1>
+<Enable-Legacy-Renegotiation>off</Enable-Legacy-Renegotiation>
+<Enable-Compression>off</Enable-Compression>
+<Disable-TLSv1d1>off</Disable-TLSv1d1>
+<Disable-TLSv1d2>off</Disable-TLSv1d2></SSLOptions>
+<ClientCAList>off</ClientCAList></CryptoProfile><SSLProxyProfile name="sample" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Direction>reverse</Direction>
+<ReverseCryptoProfile class="CryptoProfile">sample</ReverseCryptoProfile>
+<ServerCaching>on</ServerCaching>
+<SessionTimeout>300</SessionTimeout>
+<CacheSize>20</CacheSize>
+<ClientCache>on</ClientCache>
+<ClientSessionTimeout>300</ClientSessionTimeout>
+<ClientCacheSize>100</ClientCacheSize>
+<ClientAuthOptional>off</ClientAuthOptional>
+<ClientAuthAlwaysRequest>off</ClientAuthAlwaysRequest>
+<PermitInsecureServers>off</PermitInsecureServers></SSLProxyProfile><HTTPSSourceProtocolHandler name="TwoWaySSL_FSH_7033" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<LocalAddress>0.0.0.0</LocalAddress>
+<LocalPort>7033</LocalPort>
+<HTTPVersion>HTTP/1.1</HTTPVersion>
+<AllowedFeatures>
+<HTTP-1.0>on</HTTP-1.0>
+<HTTP-1.1>on</HTTP-1.1>
+<HTTP-2.0>off</HTTP-2.0>
+<POST>on</POST>
+<GET>on</GET>
+<PUT>on</PUT>
+<PATCH>off</PATCH>
+<HEAD>off</HEAD>
+<OPTIONS>off</OPTIONS>
+<TRACE>off</TRACE>
+<DELETE>off</DELETE>
+<CONNECT>off</CONNECT>
+<CustomMethods>off</CustomMethods>
+<QueryString>on</QueryString>
+<FragmentIdentifiers>on</FragmentIdentifiers>
+<DotDot>off</DotDot>
+<DotDotInPath>off</DotDotInPath>
+<DotDotInQueryString>off</DotDotInQueryString>
+<CmdExe>off</CmdExe></AllowedFeatures>
+<PersistentConnections>on</PersistentConnections>
+<MaxPersistentConnectionsReuse>0</MaxPersistentConnectionsReuse>
+<AllowCompression>off</AllowCompression>
+<AllowWebSocketUpgrade>off</AllowWebSocketUpgrade>
+<WebSocketIdleTimeout>0</WebSocketIdleTimeout>
+<MaxURLLen>16384</MaxURLLen>
+<MaxTotalHdrLen>128000</MaxTotalHdrLen>
+<MaxHdrCount>0</MaxHdrCount>
+<MaxNameHdrLen>0</MaxNameHdrLen>
+<MaxValueHdrLen>0</MaxValueHdrLen>
+<MaxQueryStringLen>0</MaxQueryStringLen>
+<CredentialCharset>protocol</CredentialCharset>
+<SSLProxy class="SSLProxyProfile">sample</SSLProxy>
+<SSLServerConfigType>proxy</SSLServerConfigType>
+<HTTP2MaxStreams>100</HTTP2MaxStreams>
+<HTTP2MaxFrameSize>16384</HTTP2MaxFrameSize>
+<HTTP2StreamHeader>off</HTTP2StreamHeader>
+<ChunkedEncoding>on</ChunkedEncoding></HTTPSSourceProtocolHandler><SSLClientProfile name="sample" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Protocols>
+<SSLv3>off</SSLv3>
+<TLSv1d0>off</TLSv1d0>
+<TLSv1d1>on</TLSv1d1>
+<TLSv1d2>on</TLSv1d2>
+<TLSv1d3>on</TLSv1d3></Protocols>
+<Ciphers>AES_256_GCM_SHA384</Ciphers>
+<Ciphers>CHACHA20_POLY1305_SHA256</Ciphers>
+<Ciphers>AES_128_GCM_SHA256</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_256_CBC_SHA384</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_256_CBC_SHA384</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_256_CBC_SHA256</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_256_CBC_SHA256</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>RSA_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>RSA_WITH_AES_256_CBC_SHA256</Ciphers>
+<Ciphers>RSA_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>RSA_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>RSA_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>RSA_WITH_AES_128_CBC_SHA</Ciphers>
+<Idcred class="CryptoIdentCred">sample</Idcred>
+<ValidateServerCert>off</ValidateServerCert>
+<Caching>on</Caching>
+<CacheTimeout>300</CacheTimeout>
+<CacheSize>100</CacheSize>
+<SSLClientFeatures>
+<use-sni>on</use-sni>
+<permit-insecure-servers>off</permit-insecure-servers>
+<compression>off</compression></SSLClientFeatures>
+<EllipticCurves>secp521r1</EllipticCurves>
+<EllipticCurves>secp384r1</EllipticCurves>
+<EllipticCurves>secp256k1</EllipticCurves>
+<EllipticCurves>secp256r1</EllipticCurves>
+<UseCustomSNIHostname>no</UseCustomSNIHostname>
+<ValidateHostname>off</ValidateHostname>
+<HostnameValidationFlags>
+<X509_CHECK_FLAG_ALWAYS_CHECK_SUBJECT>off</X509_CHECK_FLAG_ALWAYS_CHECK_SUBJECT>
+<X509_CHECK_FLAG_NO_WILDCARDS>off</X509_CHECK_FLAG_NO_WILDCARDS>
+<X509_CHECK_FLAG_NO_PARTIAL_WILDCARDS>off</X509_CHECK_FLAG_NO_PARTIAL_WILDCARDS>
+<X509_CHECK_FLAG_MULTI_LABEL_WILDCARDS>off</X509_CHECK_FLAG_MULTI_LABEL_WILDCARDS>
+<X509_CHECK_FLAG_SINGLE_LABEL_SUBDOMAINS>off</X509_CHECK_FLAG_SINGLE_LABEL_SUBDOMAINS></HostnameValidationFlags>
+<HostnameValidationFailOnError>off</HostnameValidationFailOnError>
+<EnableTLS13Compat>on</EnableTLS13Compat></SSLClientProfile><HTTPUserAgent name="sample1" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<MaxRedirects>8</MaxRedirects>
+<Timeout>300</Timeout>
+<SSLPolicies>
+<RegExp>*</RegExp>
+<SSLProxyProfile/>
+<SSLClientConfigType>client</SSLClientConfigType>
+<SSLClient class="SSLClientProfile">sample</SSLClient></SSLPolicies></HTTPUserAgent><XMLManager name="default" intrinsic="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<UserSummary>Default XML-Manager</UserSummary>
+<CacheMemorySize>2147483647</CacheMemorySize>
+<CacheSize>256</CacheSize>
+<SHA1Caching>on</SHA1Caching>
+<StaticDocumentCalls>on</StaticDocumentCalls>
+<SearchResults>on</SearchResults>
+<SupportTxWarn>off</SupportTxWarn>
+<Memoization>on</Memoization>
+<ParserLimitsBytesScanned>4194304</ParserLimitsBytesScanned>
+<ParserLimitsElementDepth>512</ParserLimitsElementDepth>
+<ParserLimitsAttributeCount>128</ParserLimitsAttributeCount>
+<ParserLimitsMaxNodeSize>33554432</ParserLimitsMaxNodeSize>
+<ParserLimitsForbidExternalReferences>on</ParserLimitsForbidExternalReferences>
+<ParserLimitsExternalReferences>forbid</ParserLimitsExternalReferences>
+<ParserLimitsMaxPrefixes>1024</ParserLimitsMaxPrefixes>
+<ParserLimitsMaxNamespaces>1024</ParserLimitsMaxNamespaces>
+<ParserLimitsMaxLocalNames>60000</ParserLimitsMaxLocalNames>
+<DocCacheMaxDocs>5000</DocCacheMaxDocs>
+<DocCacheSize>0</DocCacheSize>
+<DocMaxWrites>32768</DocMaxWrites>
+<UserAgent class="HTTPUserAgent">sample1</UserAgent></XMLManager><DomainSettings name="default" intrinsic="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<PasswordTreatment>masked</PasswordTreatment>
+<ConfigDir>config:///</ConfigDir></DomainSettings><PasswordAlias name="TwoWaySSL_Map" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<EncryptedPassword>mOhzguMCOmgw/0TGpmodrw==</EncryptedPassword>
+<DomainSettings class="DomainSettings">default</DomainSettings></PasswordAlias><CryptoCertificate name="TwoWaySSL_cryptocer" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Filename>cert:///sample-sscert.pem</Filename>
+<PasswordAlias>on</PasswordAlias>
+<Alias class="PasswordAlias">TwoWaySSL_Map</Alias>
+<IgnoreExpiration>off</IgnoreExpiration></CryptoCertificate><CryptoIdentCred name="TwoWaySSL_cryptoidentificaion" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Key class="CryptoKey">sample</Key>
+<Certificate class="CryptoCertificate">TwoWaySSL_cryptocer</Certificate></CryptoIdentCred><CryptoValCred name="TwoWaySSL_cryptovalidationcred" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<CertValidationMode>legacy</CertValidationMode>
+<UseCRL>on</UseCRL>
+<RequireCRL>off</RequireCRL>
+<CRLDPHandling>ignore</CRLDPHandling>
+<InitialPolicySet>2.5.29.32.0</InitialPolicySet>
+<ExplicitPolicy>off</ExplicitPolicy>
+<CheckDates>on</CheckDates></CryptoValCred><SSLClientProfile name="TwoWaySSL_ClientProfile" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Protocols>
+<SSLv3>off</SSLv3>
+<TLSv1d0>off</TLSv1d0>
+<TLSv1d1>on</TLSv1d1>
+<TLSv1d2>on</TLSv1d2>
+<TLSv1d3>on</TLSv1d3></Protocols>
+<Ciphers>AES_256_GCM_SHA384</Ciphers>
+<Ciphers>CHACHA20_POLY1305_SHA256</Ciphers>
+<Ciphers>AES_128_GCM_SHA256</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_256_CBC_SHA384</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_256_CBC_SHA384</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_256_CBC_SHA256</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_256_CBC_SHA256</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>RSA_WITH_AES_256_GCM_SHA384</Ciphers>
+<Ciphers>RSA_WITH_AES_256_CBC_SHA256</Ciphers>
+<Ciphers>RSA_WITH_AES_256_CBC_SHA</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>ECDHE_ECDSA_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>ECDHE_RSA_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>DHE_RSA_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>DHE_DSS_WITH_AES_128_CBC_SHA</Ciphers>
+<Ciphers>RSA_WITH_AES_128_GCM_SHA256</Ciphers>
+<Ciphers>RSA_WITH_AES_128_CBC_SHA256</Ciphers>
+<Ciphers>RSA_WITH_AES_128_CBC_SHA</Ciphers>
+<Idcred class="CryptoIdentCred">TwoWaySSL_cryptoidentificaion</Idcred>
+<ValidateServerCert>on</ValidateServerCert>
+<Valcred class="CryptoValCred">TwoWaySSL_cryptovalidationcred</Valcred>
+<Caching>on</Caching>
+<CacheTimeout>300</CacheTimeout>
+<CacheSize>100</CacheSize>
+<SSLClientFeatures>
+<use-sni>on</use-sni>
+<permit-insecure-servers>off</permit-insecure-servers>
+<compression>off</compression></SSLClientFeatures>
+<EllipticCurves>secp521r1</EllipticCurves>
+<EllipticCurves>secp384r1</EllipticCurves>
+<EllipticCurves>secp256k1</EllipticCurves>
+<EllipticCurves>secp256r1</EllipticCurves>
+<UseCustomSNIHostname>no</UseCustomSNIHostname>
+<ValidateHostname>off</ValidateHostname>
+<HostnameValidationFlags>
+<X509_CHECK_FLAG_ALWAYS_CHECK_SUBJECT>off</X509_CHECK_FLAG_ALWAYS_CHECK_SUBJECT>
+<X509_CHECK_FLAG_NO_WILDCARDS>off</X509_CHECK_FLAG_NO_WILDCARDS>
+<X509_CHECK_FLAG_NO_PARTIAL_WILDCARDS>off</X509_CHECK_FLAG_NO_PARTIAL_WILDCARDS>
+<X509_CHECK_FLAG_MULTI_LABEL_WILDCARDS>off</X509_CHECK_FLAG_MULTI_LABEL_WILDCARDS>
+<X509_CHECK_FLAG_SINGLE_LABEL_SUBDOMAINS>off</X509_CHECK_FLAG_SINGLE_LABEL_SUBDOMAINS></HostnameValidationFlags>
+<HostnameValidationFailOnError>off</HostnameValidationFailOnError>
+<EnableTLS13Compat>on</EnableTLS13Compat></SSLClientProfile><Matching name="__default-accept-service-providers__" intrinsic="true" read-only="true" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<UserSummary>Match all messages.</UserSummary>
+<MatchRules>
+<Type>url</Type>
+<HttpTag/>
+<HttpValue/>
+<Url>*</Url>
+<ErrorCode/>
+<XPATHExpression/>
+<Method>default</Method>
+<CustomMethod/></MatchRules>
+<MatchWithPCRE>off</MatchWithPCRE>
+<CombineWithOr>off</CombineWithOr></Matching><StylePolicyAction name="TwoWaySSL1_POLICY_rule_req_gatewayscript_0" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>gatewayscript</Type>
+<Input>INPUT</Input>
+<ParseSettingsReference>
+<URL/>
+<Literal/>
+<Default/></ParseSettingsReference>
+<ParseMetricsResultType>none</ParseMetricsResultType>
+<TransformLanguage>none</TransformLanguage>
+<GatewayScriptLocation>local:///TwoWaySSL.js</GatewayScriptLocation>
+<ActionDebug persisted="false">off</ActionDebug>
+<Output>dpvar_1</Output>
+<NoTranscodeUtf8>off</NoTranscodeUtf8>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyAction name="TwoWaySSL1_POLICY_rule_req_setvar_0" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>setvar</Type>
+<Input>dpvar_1</Input>
+<ParseSettingsReference>
+<URL/>
+<Literal/>
+<Default/></ParseSettingsReference>
+<ParseMetricsResultType>none</ParseMetricsResultType>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<NoTranscodeUtf8>off</NoTranscodeUtf8>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<Variable>var://service/mpgw/skip-backside</Variable>
+<Value>1</Value>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyAction name="TwoWaySSL1_POLICY_rule_req_results_0" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>results</Type>
+<Input>dpvar_1</Input>
+<ParseSettingsReference>
+<URL/>
+<Literal/>
+<Default/></ParseSettingsReference>
+<ParseMetricsResultType>none</ParseMetricsResultType>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<NoTranscodeUtf8>off</NoTranscodeUtf8>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<OutputType>default</OutputType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyRule name="TwoWaySSL1_POLICY_rule_req" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="StylePolicyAction">TwoWaySSL1_POLICY_rule_req_gatewayscript_0</Actions>
+<Actions class="StylePolicyAction">TwoWaySSL1_POLICY_rule_req_setvar_0</Actions>
+<Actions class="StylePolicyAction">TwoWaySSL1_POLICY_rule_req_results_0</Actions>
+<Direction>request-rule</Direction>
+<InputFormat>none</InputFormat>
+<OutputFormat>none</OutputFormat>
+<NonXMLProcessing>off</NonXMLProcessing>
+<Unprocessed>off</Unprocessed></StylePolicyRule><StylePolicyAction name="TwoWaySSL1_POLICY_rule_res_results_2" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Type>results</Type>
+<Input>INPUT</Input>
+<ParseSettingsReference>
+<URL/>
+<Literal/>
+<Default/></ParseSettingsReference>
+<ParseMetricsResultType>none</ParseMetricsResultType>
+<TransformLanguage>none</TransformLanguage>
+<ActionDebug persisted="false">off</ActionDebug>
+<NoTranscodeUtf8>off</NoTranscodeUtf8>
+<NamedInOutLocationType>default</NamedInOutLocationType>
+<SSLClientConfigType>proxy</SSLClientConfigType>
+<OutputType>default</OutputType>
+<Transactional>off</Transactional>
+<SOAPValidation>body</SOAPValidation>
+<SQLSourceType>static</SQLSourceType>
+<JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+<Asynchronous>off</Asynchronous>
+<ResultsMode>first-available</ResultsMode>
+<RetryCount>0</RetryCount>
+<RetryInterval>1000</RetryInterval>
+<MultipleOutputs>off</MultipleOutputs>
+<IteratorType>XPATH</IteratorType>
+<Timeout>0</Timeout>
+<MethodRewriteType>GET</MethodRewriteType>
+<MethodType>POST</MethodType>
+<MethodType2>POST</MethodType2></StylePolicyAction><StylePolicyRule name="TwoWaySSL1_POLICY_rule_res" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Actions class="StylePolicyAction">TwoWaySSL1_POLICY_rule_res_results_2</Actions>
+<Direction>response-rule</Direction>
+<InputFormat>none</InputFormat>
+<OutputFormat>none</OutputFormat>
+<NonXMLProcessing>off</NonXMLProcessing>
+<Unprocessed>off</Unprocessed></StylePolicyRule><StylePolicy name="TwoWaySSL1_POLICY" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<DefStylesheetForSoap>store:///filter-reject-all.xsl</DefStylesheetForSoap>
+<DefStylesheetForXsl>store:///identity.xsl</DefStylesheetForXsl>
+<DefXQueryForJSON>store:///reject-all-json.xq</DefXQueryForJSON>
+<PolicyMaps>
+<Match class="Matching">__default-accept-service-providers__</Match>
+<Rule class="StylePolicyRule">TwoWaySSL1_POLICY_rule_req</Rule></PolicyMaps>
+<PolicyMaps>
+<Match class="Matching">__default-accept-service-providers__</Match>
+<Rule class="StylePolicyRule">TwoWaySSL1_POLICY_rule_res</Rule></PolicyMaps></StylePolicy><PolicyAttachments name="TwoWaySSL_MPG" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<EnforcementMode>enforce</EnforcementMode>
+<PolicyReferences>on</PolicyReferences>
+<SLAEnforcementMode>allow-if-no-sla</SLAEnforcementMode></PolicyAttachments><MultiProtocolGateway name="TwoWaySSL_MPG" xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:dp="http://www.datapower.com/schemas/management">
+<mAdminState>enabled</mAdminState>
+<Priority>normal</Priority>
+<FrontProtocol class="HTTPSSourceProtocolHandler">TwoWaySSL_FSH_7033</FrontProtocol>
+<XMLManager class="XMLManager">default</XMLManager>
+<SSLClientConfigType>client</SSLClientConfigType>
+<SSLClient class="SSLClientProfile">TwoWaySSL_ClientProfile</SSLClient>
+<DefaultParamNamespace>http://www.datapower.com/param/config</DefaultParamNamespace>
+<QueryParamNamespace>http://www.datapower.com/param/query</QueryParamNamespace>
+<PropagateURI>on</PropagateURI>
+<MonitorProcessingPolicy>terminate-at-first-throttle</MonitorProcessingPolicy>
+<RequestAttachments>strip</RequestAttachments>
+<ResponseAttachments>strip</ResponseAttachments>
+<RequestAttachmentsFlowControl>off</RequestAttachmentsFlowControl>
+<ResponseAttachmentsFlowControl>off</ResponseAttachmentsFlowControl>
+<RootPartNotFirstAction>process-in-order</RootPartNotFirstAction>
+<FrontAttachmentFormat>dynamic</FrontAttachmentFormat>
+<BackAttachmentFormat>dynamic</BackAttachmentFormat>
+<MIMEFrontHeaders>on</MIMEFrontHeaders>
+<MIMEBackHeaders>on</MIMEBackHeaders>
+<StreamOutputToBack>buffer-until-verification</StreamOutputToBack>
+<StreamOutputToFront>buffer-until-verification</StreamOutputToFront>
+<MaxMessageSize>0</MaxMessageSize>
+<GatewayParserLimits>off</GatewayParserLimits>
+<ParserLimitsElementDepth>512</ParserLimitsElementDepth>
+<ParserLimitsAttributeCount>128</ParserLimitsAttributeCount>
+<ParserLimitsMaxNodeSize>33554432</ParserLimitsMaxNodeSize>
+<ParserLimitsForbidExternalReferences>on</ParserLimitsForbidExternalReferences>
+<ParserLimitsExternalReferences>forbid</ParserLimitsExternalReferences>
+<ParserLimitsMaxPrefixes>1024</ParserLimitsMaxPrefixes>
+<ParserLimitsMaxNamespaces>1024</ParserLimitsMaxNamespaces>
+<ParserLimitsMaxLocalNames>60000</ParserLimitsMaxLocalNames>
+<ParserLimitsAttachmentByteCount>2000000000</ParserLimitsAttachmentByteCount>
+<ParserLimitsAttachmentPackageByteCount>0</ParserLimitsAttachmentPackageByteCount>
+<DebugMode persisted="false">off</DebugMode>
+<DebuggerType>internal</DebuggerType>
+<DebugHistory>25</DebugHistory>
+<FlowControl>off</FlowControl>
+<SOAPSchemaURL>store:///schemas/soap-envelope.xsd</SOAPSchemaURL>
+<FrontTimeout>120</FrontTimeout>
+<BackTimeout>120</BackTimeout>
+<FrontPersistentTimeout>180</FrontPersistentTimeout>
+<BackPersistentTimeout>180</BackPersistentTimeout>
+<IncludeResponseTypeEncoding>off</IncludeResponseTypeEncoding>
+<PersistentConnections>on</PersistentConnections>
+<LoopDetection>off</LoopDetection>
+<DoHostRewriting>on</DoHostRewriting>
+<DoChunkedUpload>off</DoChunkedUpload>
+<ProcessHTTPErrors>on</ProcessHTTPErrors>
+<HTTPClientIPLabel>X-Client-IP</HTTPClientIPLabel>
+<HTTPLogCorIDLabel>X-Global-Transaction-ID</HTTPLogCorIDLabel>
+<InOrderMode>
+<Request>off</Request>
+<Backend>off</Backend>
+<Response>off</Response></InOrderMode>
+<WSAMode>sync2sync</WSAMode>
+<WSARequireAAA>on</WSARequireAAA>
+<WSAStrip>on</WSAStrip>
+<WSADefaultReplyTo>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</WSADefaultReplyTo>
+<WSADefaultFaultTo>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</WSADefaultFaultTo>
+<WSAForce>off</WSAForce>
+<WSAGenStyle>sync</WSAGenStyle>
+<WSAHTTPAsyncResponseCode>204</WSAHTTPAsyncResponseCode>
+<WSATimeout>120</WSATimeout>
+<WSRMEnabled>off</WSRMEnabled>
+<WSRMSequenceExpiration>3600</WSRMSequenceExpiration>
+<WSRMDestinationAcceptCreateSequence>on</WSRMDestinationAcceptCreateSequence>
+<WSRMDestinationMaximumSequences>400</WSRMDestinationMaximumSequences>
+<WSRMDestinationInOrder>off</WSRMDestinationInOrder>
+<WSRMDestinationMaximumInOrderQueueLength>10</WSRMDestinationMaximumInOrderQueueLength>
+<WSRMDestinationAcceptOffers>off</WSRMDestinationAcceptOffers>
+<WSRMFrontForce>off</WSRMFrontForce>
+<WSRMBackForce>off</WSRMBackForce>
+<WSRMBackCreateSequence>off</WSRMBackCreateSequence>
+<WSRMFrontCreateSequence>off</WSRMFrontCreateSequence>
+<WSRMSourceMakeOffer>off</WSRMSourceMakeOffer>
+<WSRMUsesSequenceSSL>off</WSRMUsesSequenceSSL>
+<WSRMSourceMaximumSequences>400</WSRMSourceMaximumSequences>
+<WSRMSourceRetransmissionInterval>10</WSRMSourceRetransmissionInterval>
+<WSRMSourceExponentialBackoff>on</WSRMSourceExponentialBackoff>
+<WSRMSourceMaximumRetransmissions>4</WSRMSourceMaximumRetransmissions>
+<WSRMSourceMaximumQueueLength>30</WSRMSourceMaximumQueueLength>
+<WSRMSourceRequestAckCount>1</WSRMSourceRequestAckCount>
+<WSRMSourceInactivityClose>360</WSRMSourceInactivityClose>
+<ForcePolicyExec>off</ForcePolicyExec>
+<RewriteErrors>on</RewriteErrors>
+<DelayErrors>on</DelayErrors>
+<DelayErrorsDuration>1000</DelayErrorsDuration>
+<BackHTTPVersion>HTTP/1.1</BackHTTPVersion>
+<HTTP2Required>off</HTTP2Required>
+<RequestType>json</RequestType>
+<ResponseType>json</ResponseType>
+<FollowRedirects>on</FollowRedirects>
+<RewriteLocationHeader>off</RewriteLocationHeader>
+<StylePolicy class="StylePolicy">TwoWaySSL1_POLICY</StylePolicy>
+<Type>dynamic-backend</Type>
+<AllowCompression>off</AllowCompression>
+<EnableCompressedPayloadPassthrough>off</EnableCompressedPayloadPassthrough>
+<AllowCacheControlHeader>off</AllowCacheControlHeader>
+<PolicyAttachments class="PolicyAttachments">TwoWaySSL_MPG</PolicyAttachments>
+<WSMAgentMonitor>off</WSMAgentMonitor>
+<WSMAgentMonitorPCM>all-messages</WSMAgentMonitorPCM>
+<ProxyHTTPResponse>off</ProxyHTTPResponse>
+<TransactionTimeout>0</TransactionTimeout></MultiProtocolGateway></configuration><files><file name="cert:///sample-privkey.pem" src="cert/sample-privkey.pem" location="cert" key="true"/><file name="cert:///sample-sscert.pem" src="cert/sample-sscert.pem" location="cert" key="true"/><file name="local:///TwoWaySSL.js" src="local/TwoWaySSL.js" location="local" hash="MbS4AcV59pNnqG/3Ji0X6pNtyI8="/><file name="webgui:///clixform.xsl" src="dp-aux/clixform.xsl" location="dp-aux" internal="true" hash="OBXhoh1ntXVXE/oNRysVdSHNjLQ="/><file name="webgui:///SchemaUtil.xsl" src="dp-aux/SchemaUtil.xsl" location="dp-aux" internal="true" hash="lDu5pgpeu28YNaWBHTh+kiURBQs="/><file name="webgui:///management.xsl" src="dp-aux/management.xsl" location="dp-aux" internal="true" hash="pi0c46mGrlbqTpsWjG3QUxFOCYU="/><file name="webgui:///map-dmz.xsl" src="dp-aux/map-dmz.xsl" location="dp-aux" internal="true" hash="S8LbpfukTeInHK2d6DnQfdiZmd4="/><file name="webgui:///drMgmt.xml" src="dp-aux/drMgmt.xml" location="dp-aux" internal="true" hash="qaHSaX9z31crXzipKj4L/s1SWw0="/><file name="webgui:///basetypes.xml" src="dp-aux/basetypes.xml" location="dp-aux" internal="true" hash="HrLsg2FhC6fPlGYI25NijeP828E="/></files></datapower-configuration>
